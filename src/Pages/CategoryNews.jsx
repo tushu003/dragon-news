@@ -24,8 +24,8 @@ const CategoryNews = () => {
   }, [data, id]);
   return (
     <div>
-      <h1 className="font-semibold">Dragon{categoryNews.length} News home</h1>
-      <div>
+      <h1 className="font-bold">Dragon{categoryNews.length} News home</h1>
+      <div className="mt-5">
         {
             categoryNews.map(news=>(<NewsCard key={news.id} news={news} ></NewsCard>))
         }

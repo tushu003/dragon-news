@@ -1,5 +1,6 @@
 import React from "react";
 import { FaEye, FaStar, FaShareAlt } from "react-icons/fa";
+import { CiBookmark } from "react-icons/ci";
 
 const NewsCard = ({ news }) => {
   const {
@@ -9,12 +10,12 @@ const NewsCard = ({ news }) => {
     details,
     rating,
     total_view,
-    others,
+    
   } = news;
   const formattedDate=new Date(news.author.published_date).toLocaleDateString();
 
   return (
-    <div className="card bg-base-100 shadow-md border mb-6">
+    <div className="card bg-base-100 shadow-md mb-6 ">
       <div className="card-body space-y-2">
 
         {/* Header */}
@@ -30,11 +31,14 @@ const NewsCard = ({ news }) => {
               <p className="text-sm text-gray-500">{formattedDate}</p>
             </div>
           </div>
+          <div className="flex gap-2 items-center">
+          <CiBookmark size={18} className=" cursor-pointer" />
           <FaShareAlt className="text-gray-500 cursor-pointer" />
+          </div>
         </div>
 
         {/* Title */}
-        <h2 className="card-title text-base">{title}</h2>
+        <h2 className="card-title font-2xl">{title}</h2>
 
         {/* Image */}
         <figure className="rounded-lg">
@@ -66,9 +70,9 @@ const NewsCard = ({ news }) => {
         </div>
 
         {/* Badge */}
-        {others?.is_trending && (
-          <div className="badge badge-warning w-fit">{rating?.badge}</div>
-        )}
+        {/* {others?.is_trending && ( */}
+        {/* //   <div className="badge badge-warning w-fit">{rating?.badge}</div> */}
+        {/* // )} */}
       </div>
     </div>
   );
